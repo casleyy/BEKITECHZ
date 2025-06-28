@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script defer src="js/script.js"></script>
+    <title>DASHBOARD</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Budget App</h2>
+    <div class="error_message">
+        <p>Please Enter Budget Amount | More Than 0</p>
+    </div>
+
+    <div class="ur_budget">
+        <form>
+            <label for="budget" >Your Budget</label>
+            <input type="number" placehoder ="Enter Your Budget" class = "budget_input">
+            <button class="btn" id="btn_budget">Calculate</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="ur_expenses">
+    <form>
+            <label for="expenses" >Expense Details</label>
+            <input type="number" placehoder ="Enter Your Expenses Desc:" class = "expense_input">
+            <input type="number" placehoder ="Enter Your Expenses Amount:" class = "expense_amount">
+            <button class="btn" id="btn_expenses">Add Expenses</button>
+        </form>
+</div>
+</body>
+</html>
