@@ -8,7 +8,6 @@
 
 :root{
     --light: #f6f6f9;
-    --primary: #1976d2;
     --light-primary: #cfe8ff;
     --grey: #fff;
     --dark-grey: #aaaaaa;
@@ -18,7 +17,12 @@
     --warning: #fbc02d;
     --light-warning: #fff2c6;
     --successs: #388e3c;
-    --ight-success: #bbf7d0;
+    --light-success: #bbf7d0;
+    --border-bg:#bad381;
+    --button-color: #2a4c09;
+    --table-color:#81a969;
+    --top-nav:#9dcd5a;
+    --side-nav:#32620e;
 }
 
 body {
@@ -28,17 +32,95 @@ body {
     height: 100vh;
     background-color:var(--light);
     font-family: "Poppins", sans-serif;
+    background-image: url('img/BG.png');
 }
 
 .container{
     max-width: 1280px;
     width: 100%;
+    height: auto;
     margin: 0 auto;
-    background-color: (var(--grey));
+    background-color: var(--border-bg);
     border-radius: 5px;
     box-shadow: 5px 5px 10px #000;
     overflow-x: hidden;
+}
 
+.container h2{
+    padding:2rem 0;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--light);
 }
 
 
+.budget_content{
+    padding: 2rem;
+}
+
+.error_message{
+    background-color: var(--danger);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem 0;
+    width: 650px;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: none;
+}
+.ur_budget form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.ur_budget input,
+.ur_budget select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  width: 100%;
+}
+
+.ur_budget input:focus,
+.ur_budget select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary);
+}
+
+.btn {
+  grid-column: span 2;
+  justify-self: end;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 25px;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.budget_content .btn:active{
+    transform: scale(0.98);
+}
