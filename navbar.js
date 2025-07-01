@@ -1,7 +1,7 @@
 function openNav() {
-    document.getElementById("ThriftTreeSidenav").style.width = "275px";
+    document.getElementById("site_sidenav").style.width = "275px";
 }
 
 function closeNav() {
-    document.getElementById("ThriftTreeSidenav").style.width = "0";
+    document.getElementById("site_sidenav").style.width = "0";
 }
