@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div class="custom-pie-container">
+
+        <svg class="custom-pie-chart" viewBox="-4 -4 48 48"></svg>
+
+
+    </div>
+
+    
+    <ul class="cards">
+        <li>
+            <i class="bx bx-money"></i>
+            <div class="info">
+                <h3><span>$</span><span id="budget">7,373</span></h3>
+                <p>Budget</p>
+            </div>
+        </li>
+
+        <li>
+            <i class="bx bx-credit-card"></i>
+            <div class="info">
+                <h3><span>$</span><span id="expenses">7,373</span></h3>
+                <p>Expenses</p>
+            </div>
+        </li>
+
+        <li>
+            <i class="bx bx-dollar"></i>
+            <div class="info">
+                <h3><span>$</span><span id="balance">7,373</span></h3>
+                <p>Balance</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<div class="tooltip" id="tooltip"></div>
+
+</body>
+</html>
