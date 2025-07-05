@@ -75,7 +75,7 @@ body {
     background-size: cover;
 
     display: grid;
-    grid-template-columns: 2.5fr 2.5fr;
+    grid-template-columns: 2.5fr 2.5fr 2.5fr 2.5fr 2.5fr 2.5fr;
     grid-template-rows: 2.5fr 2.5fr;
     align-content: center;
     padding: 3% 15%;
@@ -90,9 +90,7 @@ body {
 
 .section-title {
     grid-column: 1 / 7;
-    font-size: x-large;
     color: var(--button-color);
-    font-weight: bold;
 }
 
 .section-content {
@@ -102,8 +100,16 @@ body {
     border: 4px solid var(--table-color);
 }
 
+#section-1a{
+    grid-column: 1 / 4
+}
+
+#section-1b{
+    grid-column: 4 / 7
+}
+
 #section-2 {
-    grid-column: 1 / 3;
+    grid-column: 2 / 6 ;
     background-color: var(--border-bg);
     border: 4px solid var(--table-color);
     height: auto;
@@ -121,20 +127,28 @@ body {
     grid-column: 4 / 7;
 }
 
+#section-2-text h2 {
+    grid-row: 1;
+    grid-column: 1 / 7;
+    place-self: center;
+
+}
+
+#paragraph-flex-container {
+    grid-area: 2/1/7/7;
+     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 12.5%;
+    padding-left: 5%;
+}
+
 .chart {
     grid-area: 1 / 1 / 7 / 7;
-    max-width: 70%;
-    place-self: center;
-}
-
-#line-chart {
-}
-
-#pie-chart {
-}
-
-#bar-chart {
     max-width: 90%;
+    max-height: 85%;
+    place-self: center;
 }
 
 .sidenav { 
