@@ -1,59 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-.sidenav {
-  height: 100%;
-  width: 0; 
-  position: fixed;
-  z-index: 1;
-  top: 0; 
-  left: 0;
-  background-color: #32620e;
-  overflow-x: hidden;
-  padding-top: 60px; 
-  transition: 0.5s; 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --light: #f6f6f9;
+    --light-primary: #cfe8ff;
+    --primary: #2196f3; 
+    --grey: #fff;
+    --dark-grey: #aaaaaa;
+    --dark: #363949;
+    --danger: #d32f2f;
+    --light-danger: #fecdd3;
+    --warning: #fbc02d;
+    --light-warning: #fff2c6;
+    --successs: #388e3c;
+    --light-success: #bbf7d0;
+    --border-bg:#bad381;
+    --button-color: #2a4c09;
+    --table-color:#81a969;
+    --top-nav:#9dcd5a;
+    --side-nav:#32620e;
+}
+
+.site-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 125px 1fr;
+    grid-template-areas: 
+      "header"                     
+      "main";
+    height: 100vh
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--top-nav);
+    display: grid;
+    grid-template-columns: 150px 150px 1fr 150px 150px;
+}
+
+.header div {
+    place-self: center;
+}
+
+.menu-btn {
+    float: left;
+    padding-top: 5px;
+    place-self: center;
+}
+
+.menu-btn div{
+    width: 55px;
+    height: 8px;
+    background-color: var(--light);
+    margin: 9px 0;
+}
+
+#logo {
+    place-self: center;
+}
+
+#title h1{
+    color: var(--light);
+}
+
+.main-container {
+    grid-area: main;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: grid;
+    grid-template-columns: 2.5fr 2.5fr;
+    grid-template-rows: 2.5fr 2.5fr;
+    align-content: center;
+    padding: 3% 15%;
+    gap: 2% 1%;
+}
+
+.main-container div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+}
+
+.section-title {
+    grid-column: 1 / 7;
+    font-size: x-large;
+    color: var(--button-color);
+    font-weight: bold;
+}
+
+.section-content {
+    grid-column: 1 / 7;
+    grid-row: 2 / 7;
+    background-color: var(--border-bg);
+    border: 4px solid var(--table-color);
+}
+
+#section-2 {
+    grid-column: 1 / 3;
+    background-color: var(--border-bg);
+    border: 4px solid var(--table-color);
+    height: auto;
+}
+
+#section-2 div {
+    grid-row: 1 / 7;
+}
+
+#section-2-chart {
+    grid-column: 1 / 4;
+}
+
+#section-2-text {
+    grid-column: 4 / 7;
+}
+
+.chart {
+    grid-area: 1 / 1 / 7 / 7;
+    max-width: 70%;
+    place-self: center;
+}
+
+#line-chart {
+}
+
+#pie-chart {
+}
+
+#bar-chart {
+    max-width: 90%;
+}
+
+.sidenav { 
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: var(--side-nav);
+    overflow-x: hidden;
+    padding-top: 60px; 
+    transition: 0.5s; 
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif; 
-  font-size: 25px;
-  color: #ffffff;
-  display: block;
-  transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif; 
+    font-size: 25px;
+    color: var(--light);
+    display: block;
+    transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: #d4d4d4;
+    color: var(--light-primary);
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-header {
-  background-color: #9dcd5a;
-  font-family: "Poppins", sans-serif; 
-  color: #ffffff;
-}
-
-header h1 {
-  text-align: center;
-  position: top;
-}
-
-header span img{
-  src:"button.png"; 
-  alt: "Navigation Bar Button";
-  width: "100";
-  height: "100";
-  align-self: flex-start;
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
