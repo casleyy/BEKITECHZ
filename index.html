@@ -6,49 +6,82 @@
     <title>Dashboard</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <script defer src="js/script.js"></script>
+    <style>
+        body {
+            background-image: url(img/BG.png);
+        }
+    </style>
 </head>
 <body>
+ <div id="navbar-container"></div>
+<script src="js/include.js"></script>
 
-<div class="dashboard-container">
-    <div class="custom-pie-container">
+<div class="site-container">
+    <!-- header start -->
+    <div class="header">
+        <div class="menu-btn" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-        <svg class="custom-pie-chart" viewBox="-4 -4 48 48"></svg>
+        <div id="logo">
+            <img src="img/logo.png" alt="Logo" width="100" height="100">
+        </div>
 
+        <div id="title">
+            <h1>Dashboard</h1>
+        </div>
+
+        <div></div>
+
+        <div id="profile">
+            <img src="img/user.png" alt="Profile" width="75" height="75">
+        </div>
+    </div>
+    <!-- header end -->
+
+    <!-- main start -->
+    <div class="main-container">
+
+        <div class="dashboard-container">
+            <div class="custom-pie-container">
+                <svg class="custom-pie-chart" viewBox="-4 -4 48 48"></svg>
+            </div>
+
+            <ul class="cards">
+                <li>
+                    <i class="bx bx-money"></i>
+                    <div class="info">
+                        <h3><span>$</span><span id="budget">7,373</span></h3>
+                        <p>Budget</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="bx bx-credit-card"></i>
+                    <div class="info">
+                        <h3><span>$</span><span id="expenses">7,373</span></h3>
+                        <p>Expenses</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="bx bx-dollar"></i>
+                    <div class="info">
+                        <h3><span>$</span><span id="balance">7,373</span></h3>
+                        <p>Balance</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
     </div>
-
-    
-    <ul class="cards">
-        <li>
-            <i class="bx bx-money"></i>
-            <div class="info">
-                <h3><span>$</span><span id="budget">7,373</span></h3>
-                <p>Budget</p>
-            </div>
-        </li>
-
-        <li>
-            <i class="bx bx-credit-card"></i>
-            <div class="info">
-                <h3><span>$</span><span id="expenses">7,373</span></h3>
-                <p>Expenses</p>
-            </div>
-        </li>
-
-        <li>
-            <i class="bx bx-dollar"></i>
-            <div class="info">
-                <h3><span>$</span><span id="balance">7,373</span></h3>
-                <p>Balance</p>
-            </div>
-        </li>
-    </ul>
+    <!-- main end -->
 </div>
 
-
 <div class="tooltip" id="tooltip"></div>
+
 
 </body>
 </html>
