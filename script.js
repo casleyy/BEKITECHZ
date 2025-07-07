@@ -75,3 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return [x, y];
   }
 });
+
+
+// navbar stuff hereee
+
+function openNav() {
+    document.getElementById("site-sidenav").style.width = "275px";
+}
+
+function closeNav() {
+    document.getElementById("site-sidenav").style.width = "0";
+} 
