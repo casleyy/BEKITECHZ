@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: #f6f6f9;
+    --light-primary: #cfe8ff;
+    --primary: #2196f3; 
+    --grey: #fff;
+    --dark-grey: #aaaaaa;
+    --dark: #363949;
+    --danger: #d32f2f;
+    --light-danger: #fecdd3;
+    --warning: #fbc02d;
+    --light-warning: #fff2c6;
+    --success: #388e3c;
+    --light-success: #bbf7d0;
+    --border-bg: #bad381;
+    --button-color: #2a4c09;
+    --table-color: #81a969;
+    --top-nav: #9dcd5a;
+    --side-nav: #32620e;
+}
+
+body {
+    background-color: var(--light);
+    font-family: "Poppins", sans-serif;
+    background-image: url('../img/BG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.site-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 125px 1fr;
+    grid-template-areas: "header" "main";
+    height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: var(--top-nav);
+    display: grid;
+    grid-template-columns: 150px 150px 1fr 150px 150px;
+}
+
+.header div {
+    place-self: center;
+}
+
+.menu-btn {
+    padding-top: 5px;
+}
+
+.menu-btn div {
+    width: 55px;
+    height: 8px;
+    background-color: var(--light);
+    margin: 9px 0;
+}
+
+#logo {
+    place-self: center;
+}
+
+#title h1 {
+    color: var(--light);
+}
+
+/* Main Content */
+.main-container {
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3% 10%;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1280px;
+    width: 100%;
+    background-color: var(--border-bg);
+    border: 4px solid var(--table-color);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #000;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* Pie Chart */
+.custom-pie-container {
+    overflow: visible;
+    position: relative;
+}
+
+.custom-pie-chart {
+    width: 450px;
+    height: 450px;
+    transform: rotate(-90deg);
+}
+
+.custom-pie-chart path {
+    stroke: none;
+    cursor: pointer;
+    transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-pie-chart path:hover {
+    fill: #8B0000;
+}
+
+.custom-pie-chart g {
+    transition: transform 0.3s ease;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+}
+
+/* Cards */
+.dashboard-container .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    flex: 1;
+    max-width: 500px;
+}
+
+.dashboard-container .cards li {
+    padding: 1.8rem;
+    background-color: var(--light);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.dashboard-container .cards li:hover {
+    transform: translateY(-10px);
+}
+
+.dashboard-container .cards li .bx {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-container .cards li:nth-child(1) .bx {
+    background-color: var(--light-primary);
+    color: var(--primary);
+}
+
+.dashboard-container .cards li:nth-child(2) .bx {
+    background-color: var(--light-warning);
+    color: var(--warning);
+}
+
+.dashboard-container .cards li:nth-child(3) .bx {
+    background-color: var(--light-success);
+    color: var(--success);
+}
+
+.dashboard-container .cards li .info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* Sidenav - match analytics.css */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--side-nav);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    color: var(--light);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: var(--light-primary);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
