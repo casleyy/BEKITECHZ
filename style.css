@@ -38,7 +38,6 @@ body {
 }
 
 
-
 .container {
   width: 100%;
   max-width: 1000px;
@@ -394,8 +393,93 @@ body {
 
 /* cards end */
 
+/* header and sidebar stuff here*/
 
+.site-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 125px 1fr;
+    grid-template-areas: 
+      "header"                     
+      "main";
+    height: 100vh;
+    width: 100%;
+}
 
+.header {
+  grid-area: header;
+  background-color: var(--top-nav);
+  display: grid;
+  grid-template-columns: 150px 150px 1fr 150px 150px;
+}
 
+.main-container {
+  grid-area: main;
+}
 
+.header div {
+    place-self: center;
+}
 
+.menu-btn {
+    float: left;
+    padding-top: 5px;
+    place-self: center;
+}
+
+.menu-btn div{
+    width: 55px;
+    height: 8px;
+    background-color: var(--light);
+    margin: 9px 0;
+}
+
+#logo {
+    place-self: center;
+}
+
+#title h1{
+    color: var(--light);
+}
+
+.sidenav { 
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: var(--side-nav);
+    overflow-x: hidden;
+    padding-top: 60px; 
+    transition: 0.5s; 
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif; 
+    font-size: 25px;
+    color: var(--light);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: var(--light-primary);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/*header and navbar stuff end*/
