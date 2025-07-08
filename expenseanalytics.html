@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/analytics.css">
+    <link rel="stylesheet" href="css/navbar.css"/>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script> <!--chart script hopefully works-->
-    <script defer src="js/script.js"></script>
-    <title>Expense Analytics | ThrifTree</title>
+    <script defer src="js/analytics.js"></script>
+    <script dever src="js/navbar.js"></script>
+    <title>Expense Analytics</title>
     <style>
         body {
             background-image: url(img/BG.png);
@@ -22,7 +25,7 @@
                 <div></div>
                 <div></div>
             </div>
-
+ 
             <div id="logo">
                 <img src="img/logo.png" alt="Logo" width="100" height="100">
             </div>
@@ -73,6 +76,52 @@
             </div>
 
         </div>
+
+        <div class="footer-container">
+            <div id="footer-1">
+                <p id="footer-title">thriftree</p>
+                <img id="footer-logo" src="img/logo.png" alt="Logo" width="75" height="75">
+                <p id="footer-a">Let us help you spend wisely! Empower your finances one budget at a time.</p>
+                <form>
+                    <input type="email" id="user-email" placeholder="Email*"> 
+                    <input type="submit" id="sign-in-button" value="Sign In">
+                </form>
+                <p class="footer-info" id="footer-b">© 2025 Thriftree. Built for smarter financial living.</p>
+                <p class="footer-info" id="footer-c">Padre Paredes St., Sampaloc, Manila, 1015 Metro Manila</p>
+            </div>
+            <div class="footer-text" id="footer-text-1">
+                <div class="text-1">
+                    <h4>Home</h4>
+                    <a href="index.html">Dashboard</a>
+                    <a href="#">Reports</a>
+                    <a href="addexpenses.html">Transactions</a>
+                    <a href="#">Settings</a>
+                </div>
+                <div class="text-2">
+                    <h4>User Account</h4>
+                    <a href="#">My Profile</a>
+                    <a href="#">Sign Out</a>
+                </div>
+            </div>
+            <div class="footer-text" id="footer-text-2">
+                <div class="text-1">
+                    <h4>Support & Resources</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="text-2">
+                    <h4>Legal & Policies</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                </div>
+            </div>
+            <div class="footer-text" id="footer-text-3">
+                <div class="text-1">
+                    <h4>Download App</h4>
+                    <a href="#">Download on App Store</a>
+                </div>
+            </div>
+        </div>
         <!--main end-->
     </div>
     
@@ -82,7 +131,6 @@
         <a href="index.html">Dashboard</a>
         <a href="goals.html">Goals</a>
         <a href="addexpenses.html">Add Expenses</a>
-        <a href="expensehistory.html">Expense History</a>
         <a href="expenseanalytics.html">Expense Analytics</a>
     </div>
 </body>
