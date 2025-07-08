@@ -6,18 +6,20 @@
     <title>Dashboard</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/header.css"/>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/navbar.css"/>
+    <script defer src="js/navbar.js"></script>
     <script defer src="js/script.js"></script>
     <style>
         body {
             background-image: url(img/BG.png);
         }
     </style>
+
+
 </head>
 <body>
- <div id="navbar-container"></div>
-<script src="js/include.js"></script>
-
 <div class="site-container">
     <!-- header start -->
     <div class="header">
@@ -55,21 +57,21 @@
                 <li>
                     <i class="bx bx-money"></i>
                     <div class="info">
-                        <h3><span>$</span><span id="budget">7,373</span></h3>
+                        <h3><span>$</span><span id="budget_card">0</span></h3>
                         <p>Budget</p>
                     </div>
                 </li>
                 <li>
                     <i class="bx bx-credit-card"></i>
                     <div class="info">
-                        <h3><span>$</span><span id="expenses">7,373</span></h3>
+                        <h3><span>$</span><span id="expenses_card">0</span></h3>
                         <p>Expenses</p>
                     </div>
                 </li>
                 <li>
                     <i class="bx bx-dollar"></i>
                     <div class="info">
-                        <h3><span>$</span><span id="balance">7,373</span></h3>
+                        <h3><span>$</span><span id="balance_card">0</span></h3>
                         <p>Balance</p>
                     </div>
                 </li>
@@ -78,10 +80,83 @@
 
     </div>
     <!-- main end -->
+
+    <div class="footer-container">
+            <div id="footer-1">
+                <p id="footer-title">thriftree</p>
+                <img id="footer-logo" src="img/logo.png" alt="Logo" width="75" height="75">
+                <p id="footer-a">Let us help you spend wisely! Empower your finances one budget at a time.</p>
+                <form>
+                    <input type="email" id="user-email" placeholder="Email*"> 
+                    <input type="submit" id="sign-in-button" value="Sign In">
+                </form>
+                <p class="footer-info" id="footer-b">© 2025 Thriftree. Built for smarter financial living.</p>
+                <p class="footer-info" id="footer-c">Padre Paredes St., Sampaloc, Manila, 1015 Metro Manila</p>
+            </div>
+            <div class="footer-text" id="footer-text-1">
+                <div class="text-1">
+                    <h4>Home</h4>
+                    <a href="index.html">Dashboard</a>
+                    <a href="#">Reports</a>
+                    <a href="addexpenses.html">Transactions</a>
+                    <a href="#">Settings</a>
+                </div>
+                <div class="text-2">
+                    <h4>User Account</h4>
+                    <a href="#">My Profile</a>
+                    <a href="#">Sign Out</a>
+                </div>
+            </div>
+            <div class="footer-text" id="footer-text-2">
+                <div class="text-1">
+                    <h4>Support & Resources</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="text-2">
+                    <h4>Legal & Policies</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                </div>
+            </div>
+            <div class="footer-text" id="footer-text-3">
+                <div class="text-1">
+                    <h4>Download App</h4>
+                    <a href="#">Download on App Store</a>
+                </div>
+            </div>
+        </div>
 </div>
+
+    <!--navbar stuff-->
+    <div id="site-sidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Dashboard</a>
+        <a href="goals.html">Goals</a>
+        <a href="addexpenses.html">Add Expenses</a>
+        <a href="expenseanalytics.html">Expense Analytics</a>
+    </div>
 
 <div class="tooltip" id="tooltip"></div>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const budgetCardEl = document.querySelector("#budget_card");
+  const expensesCardEl = document.querySelector("#expenses_card");
+  const balanceCardEl = document.querySelector("#balance_card");
+
+  const storedBudget = localStorage.getItem("userBudget");
+  const budget = storedBudget ? parseInt(storedBudget) : 0;
+  budgetCardEl.textContent = budget;
+
+  const storedExpenses = JSON.parse(localStorage.getItem("userExpenses")) || [];
+  const totalExpenses = storedExpenses.reduce((sum, expense) => sum + parseInt(expense.amount), 0);
+  expensesCardEl.textContent = totalExpenses;
+
+  const balance = budget - totalExpenses;
+  balanceCardEl.textContent = balance;
+});
+</script>
 </body>
 </html>
